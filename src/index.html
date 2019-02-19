@@ -40,6 +40,37 @@
         margin: 0 auto;
       }
 
+      .page__header {
+        display: flex;
+        justify-content: space-between;
+        margin: 3.75rem auto;
+        max-width: 78.75rem;
+      }
+
+      .page__title {
+        font-size: 1.375rem;
+        margin: 0;
+      }
+
+      .page__navigation {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+      }
+
+      .page__navigation-item {
+        cursor: pointer;
+      }
+
+      .page__navigation-item + .page__navigation-item {
+        margin-left: 1.5625rem;
+      }
+
+      .page__navigation-item--active {
+        border-bottom: 2px solid #333;
+      }
+
       .grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -125,18 +156,20 @@
     </style>
   </head>
   <body>
-    <header class="container">
+    <header class="page__header">
       <div>
-        <h2>Brandname</h2>
+        <h2 class="page__title">Brandname</h2>
       </div>
       <nav>
-        <ul>
-          <li>MenuItem 1</li>
-          <li>MenuItem 2</li>
-          <li>MenuItem 3</li>
-          <li>MenuItem 4</li>
-          <li>MenuItem 5</li>
-          <li>MenuItem 6</li>
+        <ul class="page__navigation">
+          <li class="page__navigation-item page__navigation-item--active">
+            menuitem1
+          </li>
+          <li class="page__navigation-item">menuitem2</li>
+          <li class="page__navigation-item">menuitem3</li>
+          <li class="page__navigation-item">menuitem4</li>
+          <li class="page__navigation-item">menuitem5</li>
+          <li class="page__navigation-item">menuitem6</li>
         </ul>
       </nav>
     </header>
@@ -154,7 +187,10 @@
           />
           Fleisch
         </label>
-        <label class="filter__button filter__button--green" for="filter__vegetable">
+        <label
+          class="filter__button filter__button--green"
+          for="filter__vegetable"
+        >
           <input
             class="filter__checkbox"
             id="filter__vegetable"
@@ -164,7 +200,10 @@
           />
           Gemüse
         </label>
-        <label class="filter__button filter__button--orange" for="filter__fruit">
+        <label
+          class="filter__button filter__button--orange"
+          for="filter__fruit"
+        >
           <input
             class="filter__checkbox"
             id="filter__fruit"
