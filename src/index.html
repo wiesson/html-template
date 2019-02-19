@@ -71,10 +71,10 @@
         border-bottom: 2px solid #333;
       }
 
-      .grid {
+      .card-list {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, 18.75rem);
+        grid-gap: 1.25rem;
       }
 
       .card {
@@ -217,7 +217,7 @@
     </div>
 
     <main class="container">
-      <div class="grid">
+      <div class="card-list">
         <div class="card" data-type="fruit">
           <img
             src="https://source.unsplash.com/300x180?apple"
