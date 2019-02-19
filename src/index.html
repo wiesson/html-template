@@ -40,6 +40,10 @@
       .card {
       }
 
+      .card--hidden {
+        display: none;
+      }
+
       .card__image {
       }
 
@@ -68,9 +72,46 @@
         </ul>
       </nav>
     </header>
+
+    <div class="container">
+      <div class="filter">
+        <span class="filter__title">Filter:</span>
+        <label class="filter__label" for="filter__meat">
+          <input
+            class="filter__checkbox"
+            id="filter__meat"
+            type="checkbox"
+            value="meat"
+            checked
+          />
+          Fleisch
+        </label>
+        <label class="filter__label" for="filter__vegetable">
+          <input
+            class="filter__checkbox"
+            id="filter__vegetable"
+            type="checkbox"
+            value="vegetable"
+            checked
+          />
+          Gemüse
+        </label>
+        <label class="filter__label" for="filter__fruit">
+          <input
+            class="filter__checkbox"
+            id="filter__fruit"
+            type="checkbox"
+            value="fruit"
+            checked
+          />
+          Obst
+        </label>
+      </div>
+    </div>
+
     <main class="container">
       <div class="grid">
-        <div class="card">
+        <div class="card" data-type="fruit">
           <img
             src="https://source.unsplash.com/300x180?apple"
             alt=""
@@ -89,7 +130,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="vegetable">
           <img
             src="https://source.unsplash.com/300x180?aubergine"
             alt=""
@@ -108,7 +149,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="fruit">
           <img
             src="https://source.unsplash.com/300x180?banana"
             alt=""
@@ -127,7 +168,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="vegetable">
           <img
             src="https://source.unsplash.com/300x180?broccoli"
             alt=""
@@ -146,7 +187,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="meat">
           <img
             src="https://source.unsplash.com/300x180?chicken"
             alt=""
@@ -165,7 +206,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="fruit">
           <img
             src="https://source.unsplash.com/300x180?orange"
             alt=""
@@ -184,7 +225,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="meat">
           <img
             src="https://source.unsplash.com/300x180?beef"
             alt=""
@@ -203,7 +244,7 @@
             <a href="">Mehr erfahren</a>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-type="vegetable">
           <img
             src="https://source.unsplash.com/300x180?zucchini"
             alt=""
@@ -226,5 +267,31 @@
     </main>
 
     <footer></footer>
+
+    <script>
+      function setCardVisibility(card, isVisible) {
+        if (isVisible === true) {
+          card.classList.remove("card--hidden");
+        }
+
+        if (isVisible === false) {
+          card.classList.add("card--hidden");
+        }
+      }
+
+      function findCardsByFilterValue(filterType) {
+        return document.querySelectorAll(`[data-type=${filterType}]`);
+      }
+
+      function handleOnFilterClick(filter) {
+        const cards = findCardsByFilterValue(filter.value);
+        cards.forEach(card => setCardVisibility(card, filter.checked));
+      }
+
+      const filters = document.querySelectorAll(".filter__checkbox");
+      filters.forEach(filter =>
+        filter.addEventListener("change", () => handleOnFilterClick(filter))
+      );
+    </script>
   </body>
 </html>
