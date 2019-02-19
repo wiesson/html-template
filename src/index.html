@@ -68,6 +68,11 @@
 
       .card__title {
         margin: 0;
+        line-height: 1.5;
+      }
+
+      .card__description {
+        line-height: 1.5;
       }
 
       .tag {
@@ -87,6 +92,34 @@
       }
 
       .tag--orange {
+        background-color: var(--color-orange);
+      }
+
+      .filter {
+        margin-bottom: 1rem;
+      }
+
+      .filter__button {
+        font-size: 0.625rem;
+        padding: 0.3125rem 0.5rem;
+        border-radius: 1rem;
+      }
+
+      .filter__button + .filter__button {
+        margin-left: 0.5rem;
+      }
+
+      .filter__button--green {
+        color: white;
+        background-color: var(--color-green);
+      }
+
+      .filter__button--red {
+        color: white;
+        background-color: var(--color-red);
+      }
+
+      .filter__button--orange {
         background-color: var(--color-orange);
       }
     </style>
@@ -111,7 +144,7 @@
     <div class="container">
       <div class="filter">
         <span class="filter__title">Filter:</span>
-        <label class="filter__label" for="filter__meat">
+        <label class="filter__button filter__button--red" for="filter__meat">
           <input
             class="filter__checkbox"
             id="filter__meat"
@@ -121,7 +154,7 @@
           />
           Fleisch
         </label>
-        <label class="filter__label" for="filter__vegetable">
+        <label class="filter__button filter__button--green" for="filter__vegetable">
           <input
             class="filter__checkbox"
             id="filter__vegetable"
@@ -131,7 +164,7 @@
           />
           Gemüse
         </label>
-        <label class="filter__label" for="filter__fruit">
+        <label class="filter__button filter__button--orange" for="filter__fruit">
           <input
             class="filter__checkbox"
             id="filter__fruit"
