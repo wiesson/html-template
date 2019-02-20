@@ -126,7 +126,22 @@
         display: none;
       }
 
+      /* https://www.smashingmagazine.com/2016/08/ways-to-reduce-content-shifting-on-page-load/ */
+      .card__image-container {
+        background: #ddd
+          url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M23%2018V6c0-1.1-.9-2-2-2H3c-1.1%200-2%20.9-2%202v12c0%201.1.9%202%202%202h18c1.1%200%202-.9%202-2zM8.5%2012.5l2.5%203.01L14.5%2011l4.5%206H5l3.5-4.5z%22%2F%3E%3C%2Fsvg%3E")
+          no-repeat center center;
+        margin: 0;
+        position: relative;
+        padding-bottom: 60%;
+      }
+
       .card__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
       }
 
@@ -297,11 +312,15 @@
     <main class="container">
       <div class="card-list">
         <div class="card" data-type="fruit">
-          <img
-            src="https://source.unsplash.com/300x180?apple"
-            alt="Apple"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?apple"
+              alt="Apple"
+              class="card__image"
+              height="180"
+              width="300"
+            />
+          </figure>
           <div class="card__content">
             <header class="card__header">
               <h4 class="card__title">Apple</h4>
@@ -330,11 +349,13 @@
           </div>
         </div>
         <div class="card" data-type="vegetable">
-          <img
-            src="https://source.unsplash.com/300x180?eggplant"
-            alt="Eggplant"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?eggplant"
+              alt="Eggplant"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Eggplant</h4>
@@ -363,11 +384,13 @@
           </div>
         </div>
         <div class="card" data-type="fruit">
-          <img
-            src="https://source.unsplash.com/300x180?banana"
-            alt="Banana"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?banana"
+              alt="Banana"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Banana</h4>
@@ -396,11 +419,13 @@
           </div>
         </div>
         <div class="card" data-type="vegetable">
-          <img
-            src="https://source.unsplash.com/400x240?broccoli"
-            alt="Broccoli"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/400x240?broccoli"
+              alt="Broccoli"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Broccoli</h4>
@@ -429,11 +454,13 @@
           </div>
         </div>
         <div class="card" data-type="meat">
-          <img
-            src="https://source.unsplash.com/300x180?chicken"
-            alt="Chicken"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?chicken"
+              alt="Chicken"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Chicken</h4>
@@ -462,11 +489,13 @@
           </div>
         </div>
         <div class="card" data-type="fruit">
-          <img
-            src="https://source.unsplash.com/300x180?orange"
-            alt="Orange"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?orange"
+              alt="Orange"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Orange</h4>
@@ -495,11 +524,13 @@
           </div>
         </div>
         <div class="card" data-type="meat">
-          <img
-            src="https://source.unsplash.com/300x180?beef"
-            alt="Beef"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?beef"
+              alt="Beef"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Beef</h4>
@@ -528,11 +559,13 @@
           </div>
         </div>
         <div class="card" data-type="vegetable">
-          <img
-            src="https://source.unsplash.com/300x180?zucchini"
-            alt="Zucchini"
-            class="card__image"
-          />
+          <figure class="card__image-container">
+            <img
+              src="https://source.unsplash.com/300x180?zucchini"
+              alt="Zucchini"
+              class="card__image"
+            />
+          </figure>
           <div class="card__content">
             <div class="card__header">
               <h4 class="card__title">Zucchini</h4>
