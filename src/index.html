@@ -599,13 +599,9 @@
 
     <script>
       function setCardVisibility(card, isVisible) {
-        if (isVisible === true) {
-          card.classList.remove("card--hidden");
-        }
-
-        if (isVisible === false) {
-          card.classList.add("card--hidden");
-        }
+        isVisible === true 
+          ? card.classList.remove("card--hidden")
+          : card.classList.add("card--hidden");
       }
 
       function findCardsByFilterValue(filterType) {
